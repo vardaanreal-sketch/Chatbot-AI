@@ -78,31 +78,53 @@ export default function VeyraChat() {
     scrollToBottom()
   }, [messages, isTyping])
 
-  const handleSendMessage = async () => {
-    if (!inputValue.trim()) return
+const handleSendMessage = async () => {
+  if (!inputValue.trim()) return;
 
-    const newMessage: Message = {
-      id: Date.now().toString(),
-      text: inputValue,
-      sender: "user",
+  const newMessage: Message = {
+    id: Date.now().toString(),
+    text: inputValue,
+    sender: "user",
+    timestamp: new Date(),
+  };
+
+  setMessages((prev) => [...prev, newMessage]);
+  const userText = inputValue;
+  setInputValue("");
+  setIsTyping(true);
+
+  try {
+    // Call your API route
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: "demo-user", message: userText }),
+    });
+
+    const data = await res.json();
+
+    const aiResponse: Message = {
+      id: (Date.now() + 1).toString(),
+      text: data.reply || "Sorry, I couldn’t generate a response.",
+      sender: "ai",
       timestamp: new Date(),
-    }
+    };
 
-    setMessages((prev) => [...prev, newMessage])
-    setInputValue("")
-    setIsTyping(true)
-
-    setTimeout(() => {
-      const aiResponse: Message = {
-        id: (Date.now() + 1).toString(),
-        text: "Thank you for your question. I understand this might be a sensitive topic, and I want you to know that our conversation is completely confidential. Let me provide you with some helpful information...",
-        sender: "ai",
-        timestamp: new Date(),
-      }
-      setMessages((prev) => [...prev, aiResponse])
-      setIsTyping(false)
-    }, 2000)
+    setMessages((prev) => [...prev, aiResponse]);
+  } catch (err) {
+    console.error(err);
+    const errorMessage: Message = {
+      id: (Date.now() + 2).toString(),
+      text: "⚠️ Something went wrong. Please try again.",
+      sender: "ai",
+      timestamp: new Date(),
+    };
+    setMessages((prev) => [...prev, errorMessage]);
+  } finally {
+    setIsTyping(false);
   }
+};
+
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
