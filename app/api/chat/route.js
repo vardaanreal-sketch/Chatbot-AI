@@ -17,7 +17,7 @@ export async function POST(req) {
     `;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4.o-mini",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: message },
