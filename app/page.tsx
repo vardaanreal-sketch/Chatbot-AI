@@ -302,29 +302,50 @@ export default function VeyraChat() {
 
       <div className="fixed bottom-8 right-8 z-30">
         <div className="relative w-20 h-20 flex items-center justify-center">
-          {/* PulsingBorder component with Paper Design shader specifications */}
-          <div
-            className="absolute inset-0 rounded-full animate-pulsing-border"
-            style={{
-              background: `conic-gradient(
-                from 0deg,
-                #BEECFF 0deg,
-                #E77EDC 51.4deg,
-                #FF4C3E 102.8deg,
-                #00FF88 154.2deg,
-                #FFD700 205.6deg,
-                #FF6B35 257deg,
-                #8A2BE2 308.4deg,
-                #BEECFF 360deg
-              )`,
-              width: "60px",
-              height: "60px",
-              borderRadius: "50%",
-              transform: "scale(0.65)",
-              filter: "blur(0.5px)",
-              opacity: 0.9,
-            }}
-          />
+          <div className="absolute inset-0 rounded-full animate-fluid-droplets">
+            {/* Multiple animated droplet layers */}
+            <div
+              className="absolute inset-0 rounded-full animate-droplet-1"
+              style={{
+                background: `radial-gradient(circle at 30% 40%, #BEECFF 0%, transparent 50%),
+                           radial-gradient(circle at 70% 60%, #E77EDC 0%, transparent 50%),
+                           radial-gradient(circle at 50% 20%, #FF4C3E 0%, transparent 50%)`,
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                transform: "scale(0.65)",
+                filter: "blur(0.5px)",
+                opacity: 0.8,
+              }}
+            />
+            <div
+              className="absolute inset-0 rounded-full animate-droplet-2"
+              style={{
+                background: `radial-gradient(circle at 80% 30%, #00FF88 0%, transparent 50%),
+                           radial-gradient(circle at 20% 70%, #FFD700 0%, transparent 50%),
+                           radial-gradient(circle at 60% 80%, #FF6B35 0%, transparent 50%)`,
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                transform: "scale(0.65)",
+                filter: "blur(0.3px)",
+                opacity: 0.7,
+              }}
+            />
+            <div
+              className="absolute inset-0 rounded-full animate-droplet-3"
+              style={{
+                background: `radial-gradient(circle at 40% 80%, #8A2BE2 0%, transparent 50%),
+                           radial-gradient(circle at 90% 50%, #BEECFF 0%, transparent 50%)`,
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                transform: "scale(0.65)",
+                filter: "blur(0.4px)",
+                opacity: 0.6,
+              }}
+            />
+          </div>
 
           {/* Rotating text around the circle */}
           <div className="absolute inset-0 animate-spin-text" style={{ transform: "scale(1.6)" }}>
