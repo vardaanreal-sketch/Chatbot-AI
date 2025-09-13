@@ -273,6 +273,52 @@
   animation: spin-slow 20s linear infinite;
 }
 
+/* Added Paper Design PulsingBorder animations with exact specifications */
+@keyframes pulsing-border-paper {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.65) rotate(0deg);
+    filter: blur(0.5px) brightness(1);
+  }
+  25% {
+    opacity: 0.9;
+    transform: scale(0.7) rotate(90deg);
+    filter: blur(0.3px) brightness(1.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.75) rotate(180deg);
+    filter: blur(0.2px) brightness(1.5);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(0.7) rotate(270deg);
+    filter: blur(0.3px) brightness(1.2);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(0.65) rotate(360deg);
+    filter: blur(0.5px) brightness(1);
+  }
+}
+
+@keyframes spin-text-paper {
+  from {
+    transform: scale(1.6) rotate(0deg);
+  }
+  to {
+    transform: scale(1.6) rotate(360deg);
+  }
+}
+
+.animate-pulsing-border-paper {
+  animation: pulsing-border-paper 3s ease-in-out infinite;
+}
+
+.animate-spin-text-paper {
+  animation: spin-text-paper 20s linear infinite;
+}
+
 /* Added responsive breakpoint styles for better mobile and desktop experience */
 @media (min-width: 768px) {
   .animate-powerful-entrance {
