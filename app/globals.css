@@ -242,6 +242,37 @@
   animation: send-button-appear 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
+/* Added pulsing border animation for privacy circle */
+@keyframes pulse-border {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+/* Added slow spin animation for rotating text */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
 /* Added responsive breakpoint styles for better mobile and desktop experience */
 @media (min-width: 768px) {
   .animate-powerful-entrance {

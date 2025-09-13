@@ -299,6 +299,33 @@ export default function VeyraChat() {
           </p>
         </div>
       </div>
+
+      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 lg:bottom-8 lg:right-8 z-30">
+        <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
+          {/* Pulsing border circle */}
+          <div className="absolute inset-0 rounded-full animate-pulse-border bg-gradient-to-r from-blue-400 via-purple-300 via-pink-300 to-white opacity-80"></div>
+          <div className="absolute inset-1 rounded-full bg-background"></div>
+
+          {/* Rotating text around the circle */}
+          <div className="absolute inset-0 animate-spin-slow">
+            <svg className="w-full h-full" viewBox="0 0 100 100">
+              <defs>
+                <path id="circle-path" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+              </defs>
+              <text className="text-[6px] md:text-[5px] lg:text-[4.5px] fill-muted-foreground font-medium">
+                <textPath href="#circle-path" startOffset="0%">
+                  Your data is secure & private • Your data is secure & private •
+                </textPath>
+              </text>
+            </svg>
+          </div>
+
+          {/* Center shield icon */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Shield className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-accent" />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
