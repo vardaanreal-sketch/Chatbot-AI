@@ -270,11 +270,11 @@ export default function VeyraChat() {
 
               <div className="flex-1 overflow-y-auto p-4 md:p-6">
                 <h3 className="text-sm md:text-base font-medium text-muted-foreground mb-3 md:mb-4">Previous Chats</h3>
-                <div className="space-y-2 md:space-y-3">
-                  {chatHistory.map((chat) => (
+                <div className="space-y-2 md:space-y-3 sidebar-nav">
+                  {chatHistory.map((chat, index) => (
                     <div
                       key={chat.id}
-                      className="group p-3 md:p-4 rounded-lg bg-background hover:bg-muted cursor-pointer border border-border relative transition-colors duration-200"
+                      className={`group p-3 md:p-4 rounded-lg bg-background hover:bg-muted cursor-pointer border border-border relative transition-all duration-300 sidebar-item sidebar-item-${index % 4}`}
                     >
                       <h4 className="font-medium text-sm md:text-base text-card-foreground truncate pr-6">
                         {chat.title}
@@ -326,10 +326,15 @@ export default function VeyraChat() {
         {isTyping && (
           <div className="flex justify-start">
             <div className="bg-secondary text-secondary-foreground px-3 md:px-4 py-2 md:py-3 rounded-2xl rounded-bl-md shadow-sm">
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 bg-secondary-foreground/60 rounded-full typing-dot"></div>
-                <div className="w-2 h-2 bg-secondary-foreground/60 rounded-full typing-dot"></div>
-                <div className="w-2 h-2 bg-secondary-foreground/60 rounded-full typing-dot"></div>
+              <div className="flex items-center gap-2">
+                <div className="ai-thinking-animation">
+                  <div className="thinking-brain">
+                    <div className="brain-wave"></div>
+                    <div className="brain-wave"></div>
+                    <div className="brain-wave"></div>
+                  </div>
+                </div>
+                <span className="text-sm text-secondary-foreground/80">Veyra is thinking...</span>
               </div>
             </div>
           </div>
