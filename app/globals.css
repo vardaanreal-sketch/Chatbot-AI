@@ -4,75 +4,76 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens for Veyra health app design */
-  --background: #1a1a1a; /* Dark background */
-  --foreground: #ffffff; /* White text for contrast */
-  --card: #2a2a2a; /* Slightly lighter dark for cards */
-  --card-foreground: #ffffff; /* White text on cards */
-  --popover: #e1bee7; /* Lavender for AI messages */
-  --popover-foreground: #374151; /* Dark text on lavender */
+  /* Updated color tokens for light mode with white backgrounds */
+  --background: #ffffff; /* White background for light mode */
+  --foreground: #1a1a1a; /* Dark text for contrast */
+  --card: #ffffff; /* White cards */
+  --card-foreground: #1a1a1a; /* Dark text on cards */
+  --popover: #f8fafc; /* Very light grey for popovers */
+  --popover-foreground: #374151; /* Dark text on popovers */
   --primary: #229b7a; /* Teal for user messages */
   --primary-foreground: #ffffff; /* White text on teal */
-  --secondary: #b8a9f5; /* Lavender for AI messages */
-  --secondary-foreground: #374151; /* Dark text on lavender */
-  --muted: #333333; /* Dark grey for muted elements */
-  --muted-foreground: #9ca3af; /* Medium grey for muted text */
-  --accent: #4fc3f7; /* Updated send button color to light blue */
-  --accent-foreground: #ffffff; /* White text on coral */
+  --secondary: #f1f5f9; /* Light grey for AI messages */
+  --secondary-foreground: #374151; /* Dark text on light grey */
+  --muted: #f8fafc; /* Light grey for muted elements */
+  --muted-foreground: #6b7280; /* Medium grey for muted text */
+  --accent: #4fc3f7; /* Light blue for accent elements */
+  --accent-foreground: #ffffff; /* White text on accent */
   --destructive: #dc2626; /* Red for errors */
   --destructive-foreground: #ffffff; /* White text on red */
-  --border: #404040; /* Dark grey borders */
-  --input: #2a2a2a; /* Dark input background */
+  --border: #e5e7eb; /* Light grey borders */
+  --input: #ffffff; /* White input background */
   --ring: #229b7a; /* Teal focus ring */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.75rem; /* Slightly more rounded for friendlier feel */
-  --sidebar: #f9fafb;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
   --sidebar-foreground: #374151;
   --sidebar-primary: #229b7a;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #b8a9f5;
+  --sidebar-accent: #f1f5f9;
   --sidebar-accent-foreground: #374151;
   --sidebar-border: #e5e7eb;
   --sidebar-ring: #229b7a;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  /* Dark mode colors remain the same */
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --card: #2a2a2a;
+  --card-foreground: #ffffff;
+  --popover: #2a2a2a;
+  --popover-foreground: #ffffff;
+  --primary: #229b7a;
+  --primary-foreground: #ffffff;
+  --secondary: #b8a9f5;
+  --secondary-foreground: #374151;
+  --muted: #333333;
+  --muted-foreground: #9ca3af;
+  --accent: #4fc3f7;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #404040;
+  --input: #2a2a2a;
+  --ring: #229b7a;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: #2a2a2a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #229b7a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #333333;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #404040;
+  --sidebar-ring: #229b7a;
 }
 
 @theme inline {
